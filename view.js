@@ -12,10 +12,26 @@ class View {
     this.textTopInputNode = document.querySelector(".js-text-top-input");
     this.textBottomInputNode = document.querySelector(".js-text-bottom-input");
 
+    this.validateTopInputNode = document.querySelector(".js-validate-top-input")
+    this.validateBottomInputNode = document.querySelector(".js-validate-bottom-input")
+
     this.settingsSelectNode.addEventListener("change", this._handleSelectChange);
     
     this.textTopInputNode.addEventListener("input", this.handleTextTopChange);
     this.textBottomInputNode.addEventListener("input", this.handleTextBottomChange);
+  }
+
+  validateTopInput(errorText) {
+    this.validateTopInputNode.innerText = errorText
+  }
+  validateTopInputDelete(errorText) {
+    this.validateTopInputNode.innerText = errorText
+  }
+  validateBottomInput(errorText) {
+    this.validateBottomInputNode.innerText = errorText
+  }
+  validateBottomInputDelete(errorText) {
+    this.validateBottomInputNode.innerText = errorText
   }
 
   renderPreview(preview) {
@@ -49,4 +65,9 @@ class View {
   handleTextBottomChange = (event) => {
     this.onTextBottomChange(event.target.value);
   };
+
+  handleValidateInput() {
+
+  }
+
 }

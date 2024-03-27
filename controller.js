@@ -36,11 +36,20 @@ class Controller {
 
   handleViewTextTopChange = (text) => {
     // проверка на количество символов
-
+    if (text.length > 10) {
+      this.view.validateTopInput("Текст больше 10 символов")
+    } else {
+      this.view.validateTopInputDelete("")
+    }
     this.model.setTextTop(text);
   };
   handleViewTextBottomChange = (text) => {
     // проверка на количество символов
+    if (text.length > 10) {
+      this.view.validateBottomInput("Текст больше 10 символов")
+    } else {
+      this.view.validateBottomInputDelete("")
+    }
     
     this.model.setTextBottom(text);
   };
